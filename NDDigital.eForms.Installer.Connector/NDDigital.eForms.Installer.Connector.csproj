@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3E4E418-F494-456A-82DE-A6E73AF9D3BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NDDigital.eForms.Installer.Connector</RootNamespace>
+    <AssemblyName>NDDigital eForms Connector</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ndd.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\CreateDataBase.cs" />
+    <Compile Include="Compression\ExtractFileCompacted.cs" />
+    <Compile Include="Controls\Informix\ConnectionInformixCold.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Informix\ConnectionInformixCold.Designer.cs">
+      <DependentUpon>ConnectionInformixCold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Informix\ConnectionInformixInf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Informix\ConnectionInformixInf.Designer.cs">
+      <DependentUpon>ConnectionInformixInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Oracle\ConnectionOracleCold.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Oracle\ConnectionOracleCold.Designer.cs">
+      <DependentUpon>ConnectionOracleCold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Oracle\ConnectionOracleInf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Oracle\ConnectionOracleInf.Designer.cs">
+      <DependentUpon>ConnectionOracleInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PathControls\AllConfigurationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PathControls\AllConfigurationControl.Designer.cs">
+      <DependentUpon>AllConfigurationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PathControls\PathInstDir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PathControls\PathInstDir.Designer.cs">
+      <DependentUpon>PathInstDir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PathControls\RootInstDir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PathControls\RootInstDir.Designer.cs">
+      <DependentUpon>RootInstDir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PathControls\WorkFolderInstDir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PathControls\WorkFolderInstDir.Designer.cs">
+      <DependentUpon>WorkFolderInstDir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Progress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SQL\ConnectionSQL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SQL\ConnectionSQL.Designer.cs">
+      <DependentUpon>ConnectionSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SQL\ConnectionSQLCold.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SQL\ConnectionSQLCold.Designer.cs">
+      <DependentUpon>ConnectionSQLCold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StartPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StartPageControl.Designer.cs">
+      <DependentUpon>StartPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalation\Connector\eConnector.cs" />
+    <Compile Include="Instalation\RemoveFiles.cs" />
+    <Compile Include="Manager\ControllerClass.cs" />
+    <Compile Include="PresentationFolder\EndPresentation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationFolder\EndPresentation.Designer.cs">
+      <DependentUpon>EndPresentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationFolder\Presentation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationFolder\Presentation.Designer.cs">
+      <DependentUpon>Presentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Services.cs" />
+    <Compile Include="StartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Verification\Verifications.cs" />
+    <EmbeddedResource Include="Controls\Informix\ConnectionInformixCold.resx">
+      <DependentUpon>ConnectionInformixCold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Informix\ConnectionInformixInf.resx">
+      <DependentUpon>ConnectionInformixInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Oracle\ConnectionOracleCold.resx">
+      <DependentUpon>ConnectionOracleCold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Oracle\ConnectionOracleInf.resx">
+      <DependentUpon>ConnectionOracleInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PathControls\AllConfigurationControl.resx">
+      <DependentUpon>AllConfigurationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PathControls\PathInstDir.resx">
+      <DependentUpon>PathInstDir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PathControls\RootInstDir.resx">
+      <DependentUpon>RootInstDir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PathControls\WorkFolderInstDir.resx">
+      <DependentUpon>WorkFolderInstDir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SQL\ConnectionSQL.resx">
+      <DependentUpon>ConnectionSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SQL\ConnectionSQLCold.resx">
+      <DependentUpon>ConnectionSQLCold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StartPageControl.resx">
+      <DependentUpon>StartPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationFolder\EndPresentation.resx">
+      <DependentUpon>EndPresentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationFolder\Presentation.resx">
+      <DependentUpon>Presentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DBMGR.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ndd.ico" />
+    <None Include="Resources\DPEC.exe" />
+    <None Include="Resources\ConnectorSettings.exe" />
+    <None Include="Resources\ConnectorServices.exe" />
+    <None Include="Resources\ConnectorService.exe" />
+    <None Include="Resources\B2B.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
